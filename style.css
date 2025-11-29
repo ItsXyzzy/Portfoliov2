@@ -1,0 +1,482 @@
+:root {
+    --bg-color: #023020;
+    --accent-color: #e9ff76; /* Punchy Yellow/Green */
+    --text-color: #ffffff;
+    --font-header: 'Comfortaa', cursive;
+    --font-body: 'Montserrat', sans-serif;
+    --card-bg: rgba(233, 255, 118, 0.05); /* Very light, transparent accent */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 90vh; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    padding: 0 5vw;
+    overflow: hidden;
+}
+
+/* Animated SVG Background (Colors updated) */
+.svg-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+}
+
+.svg-bg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.blob {
+    transform-origin: center;
+    animation: float 10s infinite ease-in-out;
+}
+
+.blob.one { animation-duration: 15s; }
+.blob.two { animation-duration: 20s; animation-direction: reverse; }
+.blob.three { animation-duration: 12s; }
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(10px, -20px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Hero Typography */
+.hero-content {
+    text-align: right;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: var(--font-header);
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 .highlight {
+    color: var(--accent-color);
+    text-shadow: 0 0 20px rgba(233, 255, 118, 0.4); 
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.8;
+    max-width: 400px;
+    margin-left: auto; 
+}
+
+/* --- DESKTOP NAVBAR (Sticky) --- */
+.navbar {
+    height: 10vh; 
+    width: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(233, 255, 118, 0.1);
+    transition: all 0.4s ease;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    transition: all 0.4s ease;
+    margin: 0 auto; 
+}
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+.nav-logo {
+    position: absolute;
+    left: 0;
+    font-family: var(--font-header);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none; 
+}
+
+/* --- STICKY STATE (Triggered by JS) --- */
+.navbar.is-sticky {
+    background-color: rgba(2, 48, 32, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    height: 80px; 
+}
+
+.navbar.is-sticky .nav-logo {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    cursor: pointer;
+}
+
+/* ========================================= */
+/* --- ABOUT SECTION (100VH & 50/50 Grid) --- */
+/* ========================================= */
+.about-section {
+    padding: 0 5vw;
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50/50 Split */
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Left Side (Bio Text - No Card) --- */
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; 
+    padding-bottom: 5vh;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.bio-text .name-highlight {
+    font-family: var(--font-header);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-color); 
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(233, 255, 118, 0.5);
+}
+
+.bio-text .role-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.bio-text p:not(.name-highlight, .role-title) {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 10px;
+    max-width: 450px;
+}
+
+
+/* --- Right Side (Full-Height Skills Card) --- */
+.skills-card {
+    height: 90vh; 
+    background-color: var(--card-bg);
+    border: 1px solid rgba(233, 255, 118, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    padding: 40px;
+    position: relative;
+    justify-content: flex-start; /* Align content to top */
+}
+
+.skills-card h3 {
+    font-family: var(--font-header);
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px; /* Reduced margin */
+    text-align: center;
+}
+
+/* ========================================= */
+/* --- FULL CARD VERTICAL ROTATING LIST (CONTINUOUS LOOP) --- */
+/* ========================================= */
+
+.skill-list-container {
+    flex-grow: 1; /* Allow container to fill available space */
+    position: relative;
+    overflow: hidden; 
+    display: flex; /* Use flex to push list to the top */
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    /* Animation Properties */
+    animation: vertical-marquee 40s linear infinite; /* Longer duration for more items */
+    transition: transform 0.3s ease; /* For smooth stopping */
+    will-change: transform; 
+}
+
+/* Pause animation on hover over the entire card */
+.skills-card:hover .skill-list {
+    animation-play-state: paused;
+}
+
+.skill-list-item {
+    width: 100%;
+    padding: 8px 0; /* Reduced vertical padding */
+    margin: 4px 0; /* Reduced vertical margin */
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.6rem; /* Smaller font size */
+    font-weight: 600; /* Slightly less bold */
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Slightly less spacing */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px; /* Slightly less rounded */
+    line-height: 1.3; /* Tighter line height */
+}
+
+/* Hover effect on individual items when rotation is paused */
+.skill-list-item:hover {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(233, 255, 118, 0.7); /* Slightly softer shadow */
+    transform: scale(1.02); /* Slightly less aggressive scale */
+}
+
+/* The CSS animation definition for continuous loop */
+@keyframes vertical-marquee {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-1 * var(--list-height))); } /* Dynamically calculated by JS */
+}
+
+
+/* --- MOBILE MENU & RESPONSIVENESS (UPDATED) --- */
+@media screen and (max-width: 768px) {
+    /* Responsive Layout for About Section */
+    .about-section {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+        height: auto; 
+        min-height: 95vh;
+        padding: 50px 5vw;
+        gap: 40px;
+    }
+    
+    .bio-text {
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .skills-card {
+        height: auto;
+        min-height: 400px;
+        padding: 25px;
+    }
+
+    .bio-text .name-highlight {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .bio-text .role-title {
+        text-align: center;
+    }
+    .profile-pic {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bio-text p:not(.name-highlight, .role-title) {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .skills-card h3 {
+        font-size: 2rem;
+    }
+    .skill-list-item {
+        font-size: 1.2rem;
+        margin: 5px 0;
+        padding: 6px 0;
+    }
+    
+    /* Adjust animation for mobile */
+    .skill-list {
+        animation-duration: 25s; /* Faster scroll on smaller screens */
+    }
+
+    /* --- MOBILE TOGGLE BUTTON (Accent Color) --- */
+    .mobile-toggle {
+        display: block;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--accent-color); /* ACCENT BG */
+        border-radius: 50%;
+        z-index: 2000;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(233, 255, 118, 0.6);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-toggle .bar {
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        background-color: var(--bg-color); /* PRIMARY TEXT COLOR */
+        left: 20%;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-toggle .bar.top {
+        top: 18px;
+    }
+    
+    .mobile-toggle .bar.bottom {
+        bottom: 18px;
+    }
+
+    /* Active State (X shape) */
+    .mobile-toggle.active {
+        transform: rotate(90deg);
+        box-shadow: 0 0 20px rgba(233, 255, 118, 0.8);
+    }
+    
+    .mobile-toggle.active .bar.top {
+        top: 50%;
+        transform: rotate(45deg);
+        margin-top: -1.5px;
+    }
+    
+    .mobile-toggle.active .bar.bottom {
+        bottom: 50%;
+        transform: rotate(-45deg);
+        margin-bottom: -1.5px;
+    }
+
+    /* --- MOBILE OVERLAY MENU (Accent Background, Primary Text) --- */
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--accent-color); /* ACCENT BG */
+        z-index: 1500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .mobile-nav-links a {
+        font-family: var(--font-header);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--bg-color); /* PRIMARY TEXT COLOR */
+        text-decoration: none;
+        padding: 15px 0;
+        opacity: 0; /* Initially hidden for staggered animation */
+        transform: translateY(20px);
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Staggered link animation when active */
+    .mobile-overlay.active .mobile-nav-links a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-overlay.active .mobile-nav-links a:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-overlay.active .mobile-nav-links a:nth-child(2) { transition-delay: 0.15s; }
+    .mobile-overlay.active .mobile-nav-links a:nth-child(3) { transition-delay: 0.2s; }
+    .mobile-overlay.active .mobile-nav-links a:nth-child(4) { transition-delay: 0.25s; }
+    
+    /* Remove Desktop Nav on Mobile */
+    .navbar {
+        display: none;
+    }
+
+    /* Re-enable sticky effect for reference on mobile (though nav is hidden) */
+    .navbar.is-sticky {
+        display: none;
+    }
+}

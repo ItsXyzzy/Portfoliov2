@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craig Dowdall</title>
+    <!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Anchor for "Back to Top" --><div id="top"></div>
+
+    <!-- HERO SECTION (90% Height) --><header class="hero-section">
+        <!-- Animated SVG Background (Colors updated) --><div class="svg-bg">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#e9ff76;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#023020;stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+                <circle cx="10" cy="10" r="30" fill="url(#grad1)" class="blob one" />
+                <circle cx="90" cy="90" r="30" fill="url(#grad1)" class="blob two" />
+                <circle cx="50" cy="50" r="20" fill="url(#grad1)" class="blob three" />
+            </svg>
+        </div>
+
+        <!-- Text Content --><div class="hero-content">
+            <h1>Hi!<br>my name is<br>Craig <span class="highlight">Dowdall.</span></h1>
+            <p>Working the future, pixel by pixel.</p>
+        </div>
+    </header>
+
+    <!-- NAVBAR (10% Height initially, becomes sticky) --><nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo (Hidden initially, visible when sticky) --><a href="#top" class="nav-logo">CRAIG DOWDALL</a>
+            
+            <!-- Links --><ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#photography">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ABOUT SECTION (100VH, 50/50 Split) --><section id="about" class="about-section">
+        
+        <!-- Left Side: Bio Text (No Card) --><div class="bio-text">
+            <img 
+                src="https://placehold.co/120x120/023020/e9ff76?text=CD" 
+                alt="Profile Picture" 
+                class="profile-pic"
+                onerror="this.src='https://placehold.co/120x120/023020/e9ff76?text=JR';"
+            >
+            <p class="name-highlight">Craig Dowdall</p>
+            <p class="role-title">Multidisciplinary Developer</p>
+            <p>I am a multidisciplinary developer focused on creating clean, accessible, and fast web applications. I turn complex ideas into refined, intuitive user interfaces.</p>
+            <p>My passion lies in bridging the gap between high-level design concepts and robust, production-ready code, specifically within the modern React ecosystem.</p>
+            <p style="margin-top: 15px; font-weight: 600;">Let's build something that truly stands out.</p>
+        </div>
+
+        <!-- Right Side: Full-Height Skills Card with CSS Marquee --><div class="skills-card">
+            <h3>My Core Competencies</h3>
+            
+            <div class="skill-list-container">
+                <ul class="skill-list" id="skillList">
+                    <!-- The list MUST contain enough duplicates for a seamless loop --><!-- Repeat your core skills several times to fill the space --><li class="skill-list-item">REACT & HOOKS</li>
+                    <li class="skill-list-item">TYPESCRIPT</li>
+                    <li class="skill-list-item">TAILWIND CSS</li>
+                    <li class="skill-list-item">DESIGN SYSTEMS</li>
+                    <li class="skill-list-item">FRAMER MOTION</li>
+                    <li class="skill-list-item">NODE.JS/APIS</li>
+                    <li class="skill-list-item">UI/UX DESIGN</li>
+
+                    <li class="skill-list-item">REACT & HOOKS</li>
+                    <li class="skill-list-item">TYPESCRIPT</li>
+                    <li class="skill-list-item">TAILWIND CSS</li>
+                    <li class="skill-list-item">DESIGN SYSTEMS</li>
+                    <li class="skill-list-item">FRAMER MOTION</li>
+                    <li class="skill-list-item">NODE.JS/APIS</li>
+                    <li class="skill-list-item">UI/UX DESIGN</li>
+                    <li class="skill-list-item">FIGMA PROTOTYPING</li>
+                    <li class="skill-list-item">PYTHON 3</li>                    
+                    <li class="skill-list-item">C/C#/C++</li>
+                    <li class="skill-list-item">JAVA</li>
+                    <li class="skill-list-item">ANDROID APP DEVELOPMENT</li>
+
+                    <li class="skill-list-item">REACT & HOOKS</li>
+                    <li class="skill-list-item">TYPESCRIPT</li>
+                    <li class="skill-list-item">TAILWIND CSS</li>
+                    <li class="skill-list-item">DESIGN SYSTEMS</li>
+                    <li class="skill-list-item">FRAMER MOTION</li>
+                    <li class="skill-list-item">NODE.JS/APIS</li>
+                    <li class="skill-list-item">UI/UX DESIGN</li>
+                    <li class="skill-list-item">FIGMA PROTOTYPING</li>
+                    <li class="skill-list-item">PYTHON 3</li>                    
+                    <li class="skill-list-item">C/C#/C++</li>
+                    <li class="skill-list-item">JAVA</li>
+                    <li class="skill-list-item">ANDROID APP DEVELOPMENT</li>
+                    
+                    <li class="skill-list-item">REACT & HOOKS</li>
+                    <li class="skill-list-item">TYPESCRIPT</li>
+                    <li class="skill-list-item">TAILWIND CSS</li>
+                    <li class="skill-list-item">DESIGN SYSTEMS</li>
+                    <li class="skill-list-item">FRAMER MOTION</li>
+                    <li class="skill-list-item">NODE.JS/APIS</li>
+                    <li class="skill-list-item">UI/UX DESIGN</li>
+                    <li class="skill-list-item">FIGMA PROTOTYPING</li>
+                    <li class="skill-list-item">PYTHON 3</li>                    
+                    <li class="skill-list-item">C/C#/C++</li>
+                    <li class="skill-list-item">JAVA</li>
+                    <li class="skill-list-item">ANDROID APP DEVELOPMENT</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- DUMMY CONTENT (For scroll testing past the About section) --><section class="content-placeholder">
+        <p>This is where the Work section will go...</p>
+        <div id="work" style="height: 50vh;"></div>
+        <div id="photography" style="height: 50vh;"></div>
+        <div id="contact" style="height: 50vh;"></div>
+    </section>
+    
+    <!-- MOBILE NAVIGATION ELEMENTS --><!-- The Trigger Button (Bottom Right) --><div class="mobile-toggle" id="mobileToggle">
+        <div class="bar top"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- The Overlay Menu --><div class="mobile-overlay" id="mobileOverlay">
+        <nav class="mobile-nav-links">
+            <a href="#about" class="m-link">About</a>
+            <a href="#work">Work</a>
+            <a href="#photography">Photography</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
